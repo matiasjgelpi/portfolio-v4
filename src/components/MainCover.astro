@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import imagenPortada from "../../public/assets/images/imagenPortada.png";
+import ToggleButton from "./ToggleButton/ToggleButton";
 
 const { greeting, title, subtitle, keySentences, description } = Astro.props;
 ---
@@ -15,7 +16,7 @@ border-b-8 border-black"
   <div
     class="w-100 h-10 bg-[var(--light-blue)] row-span-1 col-span-2 flex items-center justify-end pr-4"
   >
-    <!-- <Toggle></Toggle> -->
+    <ToggleButton />
   </div>
   <div class="flex flex-row max-sm:flex-col gap-6">
     <div
