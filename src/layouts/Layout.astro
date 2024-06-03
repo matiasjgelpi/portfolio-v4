@@ -1,0 +1,85 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="
+  bg-[var(--main-background)]">
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --main-blue: #2e5b94;
+    --light-blue: #268ecd;
+    --main-black: #1d1d1b;
+	--main-background: #f5f5f5;
+   
+  }
+
+  .blue-gradient {
+      /*start ------------*/
+      background: -webkit-gradient(
+        linear,
+        left top,
+        right bottom,
+        color-stop(0.44, #268dcd),
+        color-stop(0.63, #2e5a94),
+        color-stop(0.63, #2e5a94)
+      );
+      background: -moz-linear-gradient(
+        -45deg,
+        #268dcd 44%,
+        #2e5a94 63%,
+        #2e5a94 63%
+      );
+      background: -webkit-linear-gradient(
+        -45deg,
+        #268dcd 44%,
+        #2e5a94 63%,
+        #2e5a94 63%
+      );
+      background: -o-linear-gradient(
+        -45deg,
+        #268dcd 44%,
+        #2e5a94 63%,
+        #2e5a94 63%
+      );
+      background: -ms-linear-gradient(
+        -45deg,
+        #268dcd 44%,
+        #2e5a94 63%,
+        #2e5a94 63%
+      );
+      background: linear-gradient(
+        -45deg,
+        #268dcd 44%,
+        #2e5a94 63%,
+        #2e5a94 63%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#268dcd', endColorstr='#2e5a94', gradientType=1);
+    }
+
+  /* @media (prefers-color-scheme: dark) {
+    :root {
+
+	     
+      --main-blue: white;
+      --light-blue: #268ecd;
+	  --main-background:#2e5b94 ;
+    }
+  }  */
+</style>

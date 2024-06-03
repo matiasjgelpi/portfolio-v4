@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import imagenPortada from "../../public/assets/images/imagenPortada.png";
+
+const { greeting, title, subtitle, keySentences, description } = Astro.props;
+---
+
+<section
+  class="h-100 w-100 flex flex-col
+   gap-10 first-letter:
+border-b-8 border-black"
+>
+  <div
+    class="w-100 h-10 bg-[var(--light-blue)] row-span-1 col-span-2 flex items-center justify-end pr-4"
+  >
+    <!-- <Toggle></Toggle> -->
+  </div>
+  <div class="flex gap-6">
+    <div class="relative h-[450px] pt-16 w-2/5">
+      <div
+        class="h-52 w-full max-w-xl blue-gradient rounded-r-full opacity-70 flex items-center justify-end show-up"
+      >
+        <div class="flex flex-col h-100 text-white text-3xl pr-10">
+          <p>{greeting}</p>
+          <p class="font-extrabold">Matías Gelpi</p>
+        </div>
+      </div>
+
+      <Image
+        class="absolute -bottom-1 left-0"
+        width="350"
+        height="350"
+        src={imagenPortada}
+        alt="Ilustración de Matías Gelpi"
+      />
+    </div>
+    <div class="flex flex-col items-center pt-16 text-[var(--main-blue)] pr-">
+      <div
+        class="flex flex-col w-full font-extrabold justify-start border-b-2 border-[var(--main-blue)] show-up"
+      >
+        <p class="text-4xl">{title}</p>
+        <p>{subtitle}</p>
+      </div>
+      <div
+        class="flex flex-col w-full text-xl gap-1 pt-8 pb-8 show-up delay indent-4"
+      >
+        {
+          keySentences.map((sentence: { noun: string; verb: string }) => (
+            <p>
+              <span class="text-[var(--light-blue)] font-extrabold"> + </span>
+              {sentence.verb}{" "}
+              <span class="font-extrabold">{sentence.noun}</span>
+            </p>
+          ))
+        }
+      </div>
+      <div class="text-xl flex w-full justify-start font-bold">
+        <p>{description}</p>
+      </div>
+    </div>
+  </div>
+</section>

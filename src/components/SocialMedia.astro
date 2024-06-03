@@ -1,0 +1,39 @@
+---
+const { socialMediaLinks } = Astro.props;
+---
+
+<section class="flex gap-3 grow blue-gradient p-4">
+  <div class="flex flex-col gap-3">
+    <h2 class="text-2xl text-white font-bold">Hablamos?</h2>
+    <div class="pl-3">
+      {
+        socialMediaLinks.map(
+          (link: { name: string; url: string; imgUrl: string }) => (
+            <div class="flex gap-4 items-center text-xl">
+              <img src={link.imgUrl} alt={link.name} class="w-6 " />
+              <a
+                href={
+                  link.name === "matiasjgelpi@gmail.com"
+                    ? "mailto:"
+                    : "" + link.url
+                }
+                class="text-white"
+                target="_blank"
+              >
+                {link.name}
+              </a>
+            </div>
+          )
+        )
+      }
+    </div>
+  </div>
+  <div class="grow flex text-white items-center justify-center">
+    <a
+      class="border-2 border-white rounded-full p-3 font-bold text-xl
+      "
+      href="assets\docs\Matías_Gelpi_CV.pdf"
+      download>Mi CV!</a
+    >
+  </div>
+</section>
