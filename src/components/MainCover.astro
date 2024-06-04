@@ -9,7 +9,6 @@ const { greeting, title, subtitle, description, socialMediaLinks } =
 
 <section
   class="flex flex-col
-  
    gap-10
    max-sm:gap-4
    first-letter:
@@ -20,12 +19,12 @@ border-b-8 border-black bg-[var(--lighter-blue)]"
   >
     <!-- <ToggleButton /> -->
   </div>
-  <div class="flex justify-between flex-row max-sm:flex-col gap-6 pr-6">
+  <div class="flex justify-between flex-row max-sm:flex-col gap-6 sm:pr-6">
     <div
-      class="relative h-[450px] max-sm:h-fit pt-16 max-sm:pt-0 w-1/2 max-sm:w-full"
+      class="relative h-[450px] max-sm:h-fit pt-16 max-sm:pt-0 w-2/5 max-sm:w-full"
     >
       <div
-        class="h-52 w-full max-w- blue-gradient rounded-r-full opacity-70 flex items-center justify-end show-up"
+        class="h-52 w-full  blue-gradient rounded-r-full opacity-70 flex items-center justify-end show-up"
       >
         <div class="flex flex-col h-100 text-white text-3xl pr-10">
           <p>{greeting}</p>
@@ -40,10 +39,10 @@ border-b-8 border-black bg-[var(--lighter-blue)]"
       />
     </div>
     <div
-      class="flex flex-col items-center pt-16 text-[var(--main-blue)] max-sm:p-4"
+      class="flex flex-col items-center pt-16 text-[var(--main-blue)] max-sm:p-4 sm:w-1/2"
     >
       <div
-        class="flex flex-col w-full font-extrabold justify-start border-b-2 border-[var(--main-blue)] "
+        class="flex flex-col w-full font-extrabold justify-start border-b-2 border-[var(--main-blue)]"
       >
         <p class="text-4xl">{title}</p>
         <p class="font-semibold">{subtitle}</p>
@@ -52,8 +51,9 @@ border-b-8 border-black bg-[var(--lighter-blue)]"
       <div class="text-xl flex w-full justify-start font-bold">
         <p>{description}</p>
       </div>
-      <div class="flex max-sm:flex-col items-center justify-center p-8 gap-8">
+      <div class="flex max-sm:flex-col items-center justify-center p-8 gap-8 w-full">
         <div class="p-3 rounded-xl
+       sm:w-1/2
       bg-gray-400">
           <h2 class="text-2xl text-white font-bold">Hablamos?</h2>
           {

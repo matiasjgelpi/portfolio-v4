@@ -10,7 +10,7 @@ const { keySentences } = Astro.props;
       keySentences.map((sentence: { noun: string; verb: string }) => (
         <div
           class="text-white text-sm flex max-sm:flex-col max-sm:p-1 items-center justify-center rounded-xl
-          bg-[var(--main-blue)] "
+          bg-[var(--main-blue)] pl-1 pr-1"
         >
           <p> + {sentence.verb}</p>
           <p class="font-extrabold">{sentence.noun}</p>
