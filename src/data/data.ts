@@ -24,8 +24,9 @@ export interface MainCoverData {
   greeting: string;
   title: string;
   subtitle: string;
-  keySentences: KeySentence[];
+  keySentences?: KeySentence[];
   description: string;
+  socialMediaLinks?: socialMediaLinks[];
 }
 
 export interface socialMediaLinks {
@@ -33,45 +34,6 @@ export interface socialMediaLinks {
   url: string;
   imgUrl: string;
 }
-
-export const mainCoverData: MainCoverData = {
-  greeting: "Hola soy,",
-  title: "Desarrollador Full Stack",
-  subtitle: "(Sobre todo front pero mejorando en el back)",
-  keySentences: [
-    {
-      verb: "Se: ",
-      noun: "JavaScript (ES6+), HTML, CSS (Sass), React (y Next.js),",
-    },
-    {
-      verb: "Se: ",
-      noun: "Inglés (Upper Intermediate o B2) ",
-    },
-    {
-      verb: "Trabajo con: ",
-      noun: "Angular, Git, Metodologías ágiles",
-    },
-    {
-      verb: "Tengo nociones de: ",
-      noun: "Node,  SQL, NoSQL, Docker, GraphQL",
-    },
-    {
-      verb: "Aprendiendo: ",
-      noun: "Tailwindcss, Astro, NestJs y mucho más ...",
-    },
-
-    {
-      verb: "Me gusta: ",
-      noun: "Trabajar en equipo (y tambíen solo) y compartir conocimientos, ",
-    },
-    {
-      verb: "y también me gusta: ",
-      noun: "El cine y los videojuegos, cocinar y los perros",
-    },
-  ],
-  description:
-    "Soy un entusiasta de la tecnología, y estoy buscando mi próximo desafío.",
-};
 
 export const socialMediaLinks: socialMediaLinks[] = [
   {
@@ -90,14 +52,53 @@ export const socialMediaLinks: socialMediaLinks[] = [
     url: "https://www.linkedin.com/in/matiasjgelpi/",
   },
 
-//   {
-//     name: "matiasjgelpi",
-//     imgUrl: "assets/images/instagram.svg",
-//     url: "https://www.instagram.com/matiasjgelpi/",
-//   },
+  //   {
+  //     name: "matiasjgelpi",
+  //     imgUrl: "assets/images/instagram.svg",
+  //     url: "https://www.instagram.com/matiasjgelpi/",
+  //   },
   {
     name: "matiasjgelpi",
     imgUrl: "assets/images/github.svg",
     url: "https://github.com/matiasjgelpi",
   },
 ];
+
+export const keySentences: KeySentence[] = [
+  {
+    verb: "Se: ",
+    noun: "JavaScript (ES6+), HTML, CSS (Sass), React (y Next.js), Inglés (Upper Intermediate o B2)!",
+  },
+ 
+  {
+    verb: "Actualmente uso: ",
+    noun: "Angular, Git, Metodologías ágiles",
+  },
+  {
+    verb: "Tengo nociones de: ",
+    noun: "Node,  SQL, NoSQL, Docker, GraphQL, Java",
+  },
+  {
+    verb: "Aprendiendo: ",
+    noun: "Tailwindcss, Astro, NestJs, Spring y mucho más ...",
+  },
+
+  {
+    verb: "Me gusta: ",
+    noun: "Trabajar en equipo (y tambíen solo) y compartir conocimientos, ",
+  },
+  {
+    verb: "y también me gusta: ",
+    noun: "El cine y los videojuegos, cocinar y los perros",
+  },
+];
+
+export const mainCoverData: MainCoverData = {
+  greeting: "Hola soy,",
+  title: "Desarrollador Full Stack",
+  subtitle: "(Sobre todo front pero mejorando en el back)",
+
+  description:
+    "Soy un entusiasta de la tecnología, y siempre dispuesto a enfrentar nuevos desafíos.",
+  socialMediaLinks,
+};

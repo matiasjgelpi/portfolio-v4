@@ -1,42 +1,21 @@
 ---
-import { AnimatedSubscribeButton } from "./AnimatedButton/AnimatedSubscribeButton";
 
-const { socialMediaLinks } = Astro.props;
+
+const { keySentences } = Astro.props;
 ---
 
-<section class="flex max-sm:flex-col-reverse gap-3 blue-gradient p-4">
+<section class="flex w-full max-sm:flex-col-reverse justify-center gap-3 blue-gradient p-4">
   <div class="flex flex-col gap-3">
-    <h2 class="text-2xl text-white font-bold">Hablamos?</h2>
-    <div class="pl-3">
-      {
-        socialMediaLinks.map(
-          (link: { name: string; url: string; imgUrl: string }) => (
-            <div class="flex gap-4 items-center text-xl">
-              <img src={link.imgUrl} alt={link.name} class="w-6 " />
-              <a
-                href={
-                  link.name === "matiasjgelpi@gmail.com"
-                    ? "mailto:"
-                    : "" + link.url
-                }
-                class="text-white"
-                target="_blank"
-              >
-                {link.name}
-              </a>
-            </div>
-          )
-        )
-      }
-    </div>
-  </div>
-  <div class="grow flex text-white items-center justify-center">
-    <AnimatedSubscribeButton
-      client:load
-      brand="#2e5b94"
-      subscribeStatus={false}
-      initialText="Descargar CV"
-      changeText="Gracias por interesarte!"
-    />
+    {
+      keySentences.map((sentence: { noun: string; verb: string }) => (
+        <div
+          class="text-white text-sm flex max-sm:flex-col max-sm:p-1 items-center justify-center rounded-xl
+          bg-[var(--main-blue)] "
+        >
+          <p> + {sentence.verb}</p>
+          <p class="font-extrabold">{sentence.noun}</p>
+        </div>
+      ))
+    }
   </div>
 </section>

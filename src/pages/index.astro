@@ -1,13 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MainCover from "../components/MainCover.astro";
-import { mainCoverData, socialMediaLinks } from "../data/data";
+import { mainCoverData, keySentences } from "../data/data";
 import SocialMedia from "../components/SocialMedia.astro";
 ---
 
 <Layout title="Matías Gelpi">
   <main class="flex min-h-screen flex-col">
     <MainCover {...mainCoverData} />
-    <SocialMedia {socialMediaLinks} />
+    <SocialMedia {keySentences} />
   </main>
 </Layout>

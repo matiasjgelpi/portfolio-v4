@@ -1,9 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import imagenPortada from "../../public/assets/images/imagenPortada.png";
-import ToggleButton from "./ToggleButton/ToggleButton";
+import { AnimatedSubscribeButton } from "./AnimatedButton/AnimatedSubscribeButton";
 
-const { greeting, title, subtitle, keySentences, description } = Astro.props;
+const { greeting, title, subtitle, description, socialMediaLinks } =
+  Astro.props;
 ---
 
 <section
@@ -11,10 +12,10 @@ const { greeting, title, subtitle, keySentences, description } = Astro.props;
    gap-10
    max-sm:gap-4
    first-letter:
-border-b-8 border-black"
+border-b-8 border-black bg-[var(--lighter-blue)]"
 >
   <div
-    class="w-100 h-10 bg-[var(--light-blue)] row-span-1 col-span-2 flex items-center justify-end pr-4"
+    class="w-100 h-5 bg-[var(--light-blue)] row-span-1 col-span-2 flex items-center justify-end pr-4"
   >
     <!-- <ToggleButton /> -->
   </div>
@@ -44,23 +45,46 @@ border-b-8 border-black"
         class="flex flex-col w-full font-extrabold justify-start border-b-2 border-[var(--main-blue)] show-up"
       >
         <p class="text-4xl">{title}</p>
-        <p>{subtitle}</p>
+        <p class="font-semibold">{subtitle}</p>
       </div>
-      <div
-        class="flex flex-col w-full text-xl max-md:text-sm gap-1 pt-8 max-md:pt-4 pb-8 show-up delay indent-4 max-md:indent-0"
-      >
-        {
-          keySentences.map((sentence: { noun: string; verb: string }) => (
-            <p>
-              <span class="text-[var(--light-blue)] font-extrabold"> + </span>
-              {sentence.verb}{" "}
-              <span class="font-extrabold">{sentence.noun}</span>
-            </p>
-          ))
-        }
-      </div>
+
       <div class="text-xl flex w-full justify-start font-bold">
         <p>{description}</p>
+      </div>
+      <div class="flex max-sm:flex-col items-center justify-center p-8 gap-8">
+        <div class="p-3 rounded-xl
+      bg-gray-400">
+          <h2 class="text-2xl text-white font-bold">Hablamos?</h2>
+          {
+            socialMediaLinks.map(
+              (link: { name: string; url: string; imgUrl: string }) => (
+                <div class="flex gap-4 items-center text-xl max-sm:text-base font-bold ">
+                  <img src={link.imgUrl} alt={link.name} class="w-6 " />
+                  <a
+                    href={
+                      link.name === "matiasjgelpi@gmail.com"
+                        ? "mailto:"
+                        : "" + link.url
+                    }
+                    class="text-white"
+                    target="_blank"
+                  >
+                    {link.name}
+                  </a>
+                </div>
+              )
+            )
+          }
+        </div>
+        <div class="grow flex text-white items-center justify-center">
+          <AnimatedSubscribeButton
+            client:load
+            brand="#2e5b94"
+            subscribeStatus={false}
+            initialText="Descargar CV"
+            changeText="Gracias por interesarte!"
+          />
+        </div>
       </div>
     </div>
   </div>
