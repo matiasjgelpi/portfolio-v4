@@ -17,7 +17,7 @@
 
 export interface KeySentence {
   verb: string;
-  noun: string;
+  noun: string | string[];
 }
 
 export interface MainCoverData {
@@ -66,39 +66,46 @@ export const socialMediaLinks: socialMediaLinks[] = [
 
 export const keySentences: KeySentence[] = [
   {
-    verb: "Se: ",
-    noun: "JavaScript (ES6+), HTML, CSS (Sass), React (y Next.js), Inglés (Upper Intermediate o B2)!",
-  },
- 
-  {
-    verb: "Actualmente uso: ",
-    noun: "Angular, Git, Metodologías ágiles",
-  },
-  {
-    verb: "Tengo nociones de: ",
-    noun: "Node,  SQL, NoSQL, Docker, GraphQL, Java",
-  },
-  {
-    verb: "Aprendiendo: ",
-    noun: "Tailwindcss, Astro, NestJs, Spring y mucho más ...",
+    verb: "Estudié:",
+    noun: ["javascript", "html", "css", "sass", "react"],
   },
 
   {
-    verb: "Me gusta: ",
-    noun: "Trabajar en equipo (y tambíen solo) y compartir conocimientos, ",
+    verb: "Actualmente trabajo con: ",
+    noun: ["angular", "typescript", "git", "github"],
   },
   {
-    verb: "y también me gusta: ",
-    noun: "El cine y los videojuegos, cocinar y los perros",
+    verb: "Tengo nociones de: ",
+    noun: [
+      "node",
+      "mongo",
+      "postgresql",
+      "docker",
+      "graphql",
+      "java",
+      "nextjs",
+    ],
   },
+  {
+    verb: "Estoy aprendiendo: ",
+    noun: ["tailwindcss", "astro", "nestjs", "spring"],
+  },
+
+  // {
+  //   verb: "Me gusta: ",
+  //   noun: "Trabajar en equipo (y tambíen solo) y compartir conocimientos, ",
+  // },
+  // {
+  //   verb: "y también me gusta: ",
+  //   noun: "El cine y los videojuegos, cocinar y los perros",
+  // },
 ];
 
 export const mainCoverData: MainCoverData = {
   greeting: "Hola soy,",
   title: "Desarrollador Full Stack",
   subtitle: "(Sobre todo front pero mejorando en el back)",
-
   description:
-    "Soy un entusiasta de la tecnología, y siempre dispuesto a enfrentar nuevos desafíos.",
+    "Soy un entusiasta de la tecnología, siempre dispuesto a enfrentar nuevos desafíos.",
   socialMediaLinks,
 };

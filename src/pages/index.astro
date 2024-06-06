@@ -2,12 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import MainCover from "../components/MainCover.astro";
 import { mainCoverData, keySentences } from "../data/data";
-import SocialMedia from "../components/SocialMedia.astro";
+import SkillsSection from "../components/SkillsSection.astro";
 ---
 
 <Layout title="Matías Gelpi">
-  <main class="flex min-h-screen flex-col grow  justify-between">
+  <main class="flex min-h-screen w-full sm:w-9/12 flex-col grow
+  sm:border-x-8 border sm:border-gray-950
+  ">
     <MainCover {...mainCoverData} />
-    <SocialMedia {keySentences} />
+    <SkillsSection {keySentences} />
   </main>
 </Layout>
