@@ -67,28 +67,28 @@ export const socialMediaLinks: socialMediaLinks[] = [
 export const keySentences: KeySentence[] = [
   {
     verb: "Estudié:",
-    noun: ["javascript", "html", "css", "sass", "react"],
+    noun: ["javascript", "html", "css", "node", "react"],
   },
 
   {
     verb: "Actualmente trabajo con: ",
-    noun: ["angular", "typescript", "git", "github"],
+    noun: ["angular", "typescript", "git", "github", "sass"],
   },
   {
     verb: "Tengo nociones de: ",
     noun: [
-      "node",
+      
       "mongo",
       "postgresql",
       "docker",
       "graphql",
-      "java",
       "nextjs",
+      
     ],
   },
   {
     verb: "Estoy aprendiendo: ",
-    noun: ["tailwindcss", "astro", "nestjs", "spring"],
+    noun: ["tailwindcss", "astro", "nestjs", "spring", "java",],
   },
 
   // {
@@ -103,7 +103,7 @@ export const keySentences: KeySentence[] = [
 
 export const mainCoverData: MainCoverData = {
   greeting: "Hola soy,",
-  title: "Desarrollador Full Stack",
+  title: "Desarrollador Web Full Stack",
   subtitle: "(Sobre todo front pero mejorando en el back)",
   description:
     "Soy un entusiasta de la tecnología, siempre dispuesto a enfrentar nuevos desafíos.",

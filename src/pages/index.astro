@@ -1,15 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MainCover from "../components/MainCover.astro";
-import { mainCoverData, keySentences } from "../data/data";
+import { socialMediaLinks, mainCoverData, keySentences } from "../data/data";
 import SkillsSection from "../components/SkillsSection.astro";
+import ContactSection from "../components/ContactSection.astro";
 ---
 
 <Layout title="Matías Gelpi">
-  <main class="flex min-h-screen w-full sm:w-9/12 flex-col grow
-  sm:border-x-8 border sm:border-gray-950
-  ">
+  <main
+    class="flex min-h-screen w-full sm:w-4/5 flex-col grow
+  sm:border-x-2 border sm:border-gray-950"
+  >
     <MainCover {...mainCoverData} />
     <SkillsSection {keySentences} />
+    <ContactSection {socialMediaLinks} />
   </main>
 </Layout>

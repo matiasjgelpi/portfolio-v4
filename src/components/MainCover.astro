@@ -1,10 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import imagenPortada from "../../public/assets/images/imagenPortada.png";
+import imagenPortada from "../../public/assets/images/imagenPortadaMinor.png";
 import { AnimatedSubscribeButton } from "./magicui/AnimatedSubscribeButton";
 
-const { greeting, title, subtitle, description, socialMediaLinks } =
-  Astro.props;
+const { greeting, title, description } = Astro.props;
 ---
 
 <section
@@ -12,28 +11,28 @@ const { greeting, title, subtitle, description, socialMediaLinks } =
    gap-10
    max-sm:gap-4
    first-letter:
-border-b-8 border-black"
+   bg-texture-and-pattern
+   bg-contain"
 >
   <div
     class="w-100 h-5 bg-[var(--light-blue)] row-span-1 col-span-2 flex items-center justify-end pr-4"
   >
-    <!-- <ToggleButton /> -->
   </div>
   <div class="flex justify-between flex-row max-sm:flex-col gap-6 sm:pr-6">
     <div
-      class="relative h-[450px] max-sm:h-fit pt-16 max-sm:pt-0 w-1/2 sm:gap-6 max-sm:w-full"
+      class="relative h-[410px] max-sm:h-fit pt-16 max-sm:pt-0 w-1/2 sm:gap-6 max-sm:w-full"
     >
       <div
         class="h-52 w-full blue-gradient rounded-r-full opacity-70 flex items-center justify-end show-up"
       >
-        <div class="flex flex-col h-100 text-white text-3xl pr-10">
+        <div class="flex flex-col h-100 text-white text-3xl pr-10 max-sm:pr-5">
           <p>{greeting}</p>
-          <p class="font-extrabold">Matías Gelpi</p>
+          <p class="font-bold">Matías Gelpi</p>
         </div>
       </div>
 
       <Image
-        class="animate-fade-right absolute -bottom-[2.85rem] max-sm:top-0 left-0 w-[350px] max-sm:w-[175px] max-sm:h-[230px]"
+        class="animate-fade-right absolute top-0 left-0 w-[350px] max-sm:w-[190px] max-sm:h-[230px]"
         src={imagenPortada}
         alt="Ilustración de Matías Gelpi"
       />
@@ -44,44 +43,23 @@ border-b-8 border-black"
       <div
         class="flex flex-col w-full font-extrabold justify-start border-b-2 border-[var(--main-blue)]"
       >
-        <p class="text-4xl animate-jump-in animate-delay-300 animate-once">
+        <p
+          class="text-4xl max-sm:text-2xl animate-jump-in animate-delay-300 animate-once title"
+        >
           {title}
         </p>
-        <p class="font-semibold">{subtitle}</p>
       </div>
 
-      <div class="text-xl flex w-full justify-start font-bold">
+      <div class="text-xl max-sm:text-base flex flex-col gap-4 w-full justify-start font-bold">
         <p>{description}</p>
+        <p class="font-normal">
+          <span class="font-bold">+</span>Inglés B2 y mejorando!
+        </p>
+        <p class="font-normal">
+          <span class="font-bold">+</span>Experiencia con metodologías agiles!
+        </p>
       </div>
       <div class="flex flex-col items-center justify-center p-8 gap-8 w-full">
-        <div
-          class="p-3
-          rounded-xl
-        sm:h-ful
-        blue-gradient"
-        >
-          <h2 class="text-2xl text-white font-bold">Hablamos?</h2>
-          {
-            socialMediaLinks.map(
-              (link: { name: string; url: string; imgUrl: string }) => (
-                <div class="flex gap-4 items-center text-xl max-sm:text-base font-bold z-40 ">
-                  <img src={link.imgUrl} alt={link.name} class="w-6 " />
-                  <a
-                    href={
-                      link.name === "matiasjgelpi@gmail.com"
-                        ? "mailto:"
-                        : link.url
-                    }
-                    class="text-white"
-                    target="_blank"
-                  >
-                    {link.name}
-                  </a>
-                </div>
-              )
-            )
-          }
-        </div>
         <div class="flex text-white items-center justify-center">
           <AnimatedSubscribeButton
             client:load
@@ -95,3 +73,19 @@ border-b-8 border-black"
     </div>
   </div>
 </section>
+
+<style lang="scss">
+  .title {
+    &::after {
+      font-size: 16px;
+      font-weight: normal;
+
+      display: block;
+      line-height: 18px;
+    }
+
+    &:hover::after {
+      content: "(Sobre todo front pero mejorando en el back)";
+    }
+  }
+</style>

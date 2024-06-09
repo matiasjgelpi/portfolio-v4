@@ -1,0 +1,35 @@
+---
+import Badge from "./badge.astro";
+
+const { socialMediaLinks } = Astro.props;
+---
+
+<div
+  class="p-3
+grow
+sm:h-full
+bg-[var(--light-blue-opacity-5)]
+text-[var(--main-blue)]
+flex flex-col justify-between
+gap-4
+pt-4
+pb-12"
+>
+  <Badge name="Contacto" />
+
+  {
+    socialMediaLinks.map(
+      (link: { name: string; url: string; imgUrl: string }) => (
+        <div class="flex gap-4 items-center text-2xl max-sm:text-base font-bold z-40 ">
+          <img src={link.imgUrl} alt={link.name} class="w-9 " />
+          <a
+            href={link.name === "matiasjgelpi@gmail.com" ? "mailto:" : link.url}
+            target="_blank"
+          >
+            {link.name}
+          </a>
+        </div>
+      )
+    )
+  }
+</div>

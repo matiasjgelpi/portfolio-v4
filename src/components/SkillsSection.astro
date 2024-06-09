@@ -1,43 +1,43 @@
 ---
 import SkillIcon from "./SkillIcon.astro";
+import Badge from "./badge.astro";
 
 const { keySentences } = Astro.props;
 ---
 
 <section
-  class="grow flex w-full flex-col justify-center gap-2 blue-gradient p-4 overflow-hidden"
+  class="flex flex-col w-full gap-3 bg-[var(--lighter-blue)] p-4 overflow-hidden"
 >
-  <p class="self-center text-white font-bold text-2xl">
-    Skills: <span class="text-xl font-normal">
-      Sé inglés(upper intermediate) y metodologías ágiles pero además:</span
-    >
-  </p>
-  {
-    keySentences.map((sentence: { noun: string[]; verb: string }) => (
-      <div class="flex flex-col gap-2 overflow-hidden">
-        <p class="text-white text-center text-xl font-semibold">
-          {" "}
-          + {sentence.verb}
-        </p>
-        <div
-          class=" flex flex-col  items-center  max-sm:items-start
-           max-sm:overflow-x-scroll "
-        >
-          <div
-            class="
-            flex gap-2 animate-jump-in animate-duration-[2100ms]  "
-          >
-            {sentence?.noun?.map((noun: string) => (
-              <div class="p-2 min-w-20 flex flex-col items-center gap-1 rounded-lg bg-slate-600 hover:animate-wiggle">
-                <SkillIcon width="45" height="45" name={noun} />
-                <p class="text-white text-xs uppercase">{noun}</p>
-              </div>
-            ))}
-          </div>
+  <Badge name="Habilidades" />
 
-          <div />
+  <div class="flex gap-2 max-sm:flex-col">
+    {
+      keySentences.map((sentence: { noun: string[]; verb: string }) => (
+        <div class="  flex flex-col  gap-2 overflow-hidden">
+          <p class="text-[var(--main-blue)] text-center text-xl font-semibold">
+            {" "}
+            {sentence.verb}
+          </p>
+          <div
+            class=" flex flex-col  max-sm:items-start
+           max-sm:overflow-x-scroll "
+          >
+            <div
+              class="
+            flex justify-center rounded-lg bg-[var(--light-blue-opacity-5)] p-2 flex-wrap gap-3 animate-jump-in animate-duration-[1100ms]  "
+            >
+              {sentence?.noun?.map((noun: string) => (
+                <div class="p-2 min-w-24 flex flex-col items-center gap-1 rounded-lg bg-slate-600 hover:animate-wiggle">
+                  <SkillIcon width="40" height="40" name={noun} />
+                  <p class="text-white text-xs uppercase">{noun}</p>
+                </div>
+              ))}
+            </div>
+
+            <div />
+          </div>
         </div>
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
 </section>
