@@ -8,10 +8,7 @@ const SendMail: React.FC = () => {
   );
 
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
-    console.log(form);
-    console.log(import.meta.env);
-    setSendStatus(null);
-    e.preventDefault();
+      e.preventDefault();
 
     const {
       PUBLIC_EMAILJS_PUBLIC_KEY: publicKey,
@@ -29,8 +26,9 @@ const SendMail: React.FC = () => {
             setSendStatus("success");
             if (form.current) form.current.reset();
           },
-          () => {
+          (error) => {
             setSendStatus("error");
+            console.log(error)
           }
         );
     }
